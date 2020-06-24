@@ -11,14 +11,14 @@ public class MyListTest {			//1. 자바 파일과 이름이 같은 클래스가 
 		list.add(1,100);
 		
 		int delVal = list.remove();
-		int delVal2 = list.remove(1);
-				
-		for(int i=0; i<list.size(); i++) {
-			System.out.print(list.get(i)+ ", ");
-		}
+		
+		MyArrays.print(list); // [10, 1200, 15] 프린트되도록
+							  // 선언을 하지 않고 생성하는거니 static을 씀
 		System.out.println();
-		System.out.println(delVal);
-		System.out.println(delVal2);
+		System.out.print(MyArrays.toString(list)); // 문자열을 리턴하도록. Arrays.toString 메소드 금지!
+		System.out.println();
+		MyArrays.print1(list);
+
 	}
 }
 
@@ -86,4 +86,32 @@ class MyList {
 	int remove() {
 		return remove(arr.length-1);
 	}
+	
+		
+	}
+
+
+class MyArrays {
+	
+	static void print(MyList list) {			// 객체화 안했으니 static (example.example), 바로 값출력해야하니 void형(=없다) 	
+		System.out.print("[");
+		for(int i=0; i<list.size(); i++) {
+			System.out.print(list.get(i) + (i==list.size()-1 ? "]" : ", "));
+ 		}
+	}
+	 
+	static String toString(MyList list) {
+		String str = "[";
+		for(int i=0; i<list.size(); i++) {
+			str += list.get(i) + (i==list.size()-1 ? "]" : ", ");
+ 		} 
+		return str;
+		// return String.format("%s", str);
+		// return "[" + str "]"
+	}
+	
+	static void print1(MyList list) {
+		System.out.println(toString(list));
+	}
+	
 }
