@@ -1,3 +1,13 @@
+/*
+ 1. 숫자 삽입하면 마지막 숫자 추가 되는 add 만들기
+ 2. (인덱스,숫자) 삽입하면 추가되는 add 만들기
+ 3. 마지막 내용 삭제
+ 4. (인덱스,숫자) 삭제
+ 5. 문자열을 리턴하게 만들기
+ 
+ */
+
+
 package com.koreait.hs.level3;
 
 public class MyListTest {			//1. 자바 파일과 이름이 같은 클래스가 있어야 한다.
@@ -15,6 +25,7 @@ public class MyListTest {			//1. 자바 파일과 이름이 같은 클래스가 
 		MyArrays.print(list); // [10, 1200, 15] 프린트되도록
 							  // 선언을 하지 않고 생성하는거니 static을 씀
 		System.out.println();
+		
 		System.out.print(MyArrays.toString(list)); // 문자열을 리턴하도록. Arrays.toString 메소드 금지!
 		System.out.println();
 		MyArrays.print1(list);
