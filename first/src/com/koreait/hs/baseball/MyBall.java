@@ -20,8 +20,10 @@ public class MyBall {
 			
 			try {									// 
 				myArr[i] = Integer.parseInt(val);   //Integer.parseInt() : 문자열을 정수형으로 바꿔준다
-				} catch(Exception e) {				//정수형이 아니면 0이 뜨게한다.
-					myArr[i] = 0;
+				} catch(Exception e) {	//정수형이 아니면 0이 뜨게한다.
+					i--;
+					System.out.println("숫자 입력하세요");
+					continue;
 				}
 			
 			System.out.printf("숫자%d : %d \n", i + 1, myArr[i]);
@@ -36,7 +38,7 @@ public class MyBall {
 				if (myArr[i] == myArr[z]) {
 					System.out.println("중복 된 값이 존재합니다.");
 					i--;
-					break; // z for문까지 벗어남
+					break; // z for문까지만 벗어남
 				}
 
 			}
