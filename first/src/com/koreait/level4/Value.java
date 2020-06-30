@@ -25,4 +25,14 @@ public class Value {
 		
 	}
 	
+	@Override //override 해서  println에서 상수를 문자열로 바꿔줌
+	public String toString() {
+		//return String.copyValueOf(val);
+		return String.format("%,d", val);
+		
+	}
+	
+	
+	
+	
 }
