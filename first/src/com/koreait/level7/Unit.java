@@ -5,9 +5,11 @@ public class Unit {
 	public final int max_hp;
 	private int current_hp;
 	
+	//final 변수 상수//final 메소드 상속x // final class 상속x
 	
-	public Unit(String name, int max_hp) { // final은 생성자로 값넣는 방법 밖에 없다!! 메소드통해서NO.
-		this.name = name;				    // 기본생성자가 없다.
+	
+	public Unit(String name, int max_hp) {  // final은 생성자로 값넣는 방법 밖에 없다!! 메소드통해서NO.
+		this.name = name;				    // 생성자를 생성하면 기본생성자가 없다
 		this.max_hp = max_hp;				// 생성자가 하나라도 있는 순간. 기본생성자를 자동으로 생성해주지 않음 : super()
 		this.current_hp = max_hp;			
 	}
@@ -18,6 +20,10 @@ public class Unit {
 	
 	public void getDamage(int damage) {
 		current_hp -= damage;
+	}
+	
+	public void setCurrent_hp(int hp) {
+		this.current_hp = hp;
 	}
 
 	public void move(int x, int y) {
